@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mohab Belkan — .NET Software Engineer</title>
+<meta name="description" content="Mohab Belkan, .NET software engineer in Cairo. ASP.NET Core, Clean Architecture, SQL Server, Docker, CI/CD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070b;--fg:#ecebf3;--mute:#8b8aa0;--a:#8b5cf6;--b:#22d3ee;--c:#f472b6;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;cursor:none}
+@media(hover:none){body{cursor:auto}.cur,.cur2{display:none}}
+a{color:inherit;text-decoration:none}
+canvas#bg{position:fixed;inset:0;z-index:-2}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.28),transparent 65%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%);left:50%;top:30%}
+.cur{position:fixed;width:8px;height:8px;border-radius:50%;background:#fff;z-index:99;pointer-events:none;mix-blend-mode:difference;transform:translate(-50%,-50%)}
+.cur2{position:fixed;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.5);z-index:99;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+body.hov .cur2{width:70px;height:70px;border-color:var(--b)}
+nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;z-index:20;backdrop-filter:blur(14px);background:linear-gradient(#07070bcc,transparent)}
+nav .logo{font-family:'JetBrains Mono';font-size:14px;letter-spacing:.05em}
+nav .logo b{color:var(--b)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--mute)}
+nav ul a:hover{color:#fff}
+@media(max-width:700px){nav ul{display:none}}
+section{padding:120px 5vw;max-width:1250px;margin:auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:140px}
+.tag{font-family:'JetBrains Mono';font-size:13px;color:var(--b);display:inline-flex;gap:10px;align-items:center;margin-bottom:28px}
+.tag i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px #22c55e;animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.3}}
+h1{font-size:clamp(52px,11vw,170px);line-height:.9;font-weight:700;letter-spacing:-.045em}
+h1 .l{display:block;overflow:hidden}
+h1 .l span{display:inline-block;transform:translateY(110%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .l:nth-child(2) span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+h1 em{font-family:'Instrument Serif';font-weight:400;font-style:italic;background:linear-gradient(100deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;color:transparent;background-size:200%;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200%}}
+.role{margin-top:34px;font-size:clamp(18px,2.2vw,28px);color:var(--mute);max-width:760px;line-height:1.4}
+.role b{color:var(--fg);font-weight:500}
+#type{color:var(--fg);border-right:2px solid var(--b);padding-right:4px}
+.cta{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap}
+.btn{padding:16px 28px;border-radius:100px;font-weight:500;border:1px solid var(--line);background:var(--card);transition:.25s;display:inline-flex;gap:10px}
+.btn.p{background:linear-gradient(100deg,var(--a),#6366f1);border:0;box-shadow:0 10px 40px -8px var(--a)}
+.btn:hover{transform:translateY(-3px);border-color:var(--b)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:90px}
+.stats div{background:var(--bg);padding:26px}
+.stats b{display:block;font-size:clamp(28px,4vw,48px);letter-spacing:-.03em}
+.stats span{font-size:13px;color:var(--mute);font-family:'JetBrains Mono'}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+.sh{display:flex;align-items:baseline;gap:18px;margin-bottom:56px}
+.sh small{font-family:'JetBrains Mono';color:var(--a);font-size:14px}
+.sh h2{font-size:clamp(34px,5vw,64px);letter-spacing:-.035em;font-weight:500}
+.sh h2 em{font-family:'Instrument Serif';font-weight:400}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+@media(max-width:850px){.about{grid-template-columns:1fr}}
+.about p{font-size:clamp(18px,1.8vw,24px);line-height:1.55;color:#c9c8d8}
+.about p b{color:#fff;font-weight:500}
+.term{border:1px solid var(--line);border-radius:16px;background:#0c0c14;font-family:'JetBrains Mono';font-size:13px;line-height:1.8;overflow:hidden;box-shadow:0 40px 80px -30px rgba(139,92,246,.4)}
+.term .bar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840}
+.term pre{padding:20px;white-space:pre-wrap;color:#b9b8d0}
+.k{color:#c084fc}.t{color:#22d3ee}.s{color:#86efac}.m{color:#6b6a85}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.skills{grid-template-columns:1fr 1fr}}@media(max-width:600px){.skills{grid-template-columns:1fr}}
+.card{position:relative;padding:28px;border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:.3s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,0),rgba(139,92,246,.22),transparent 45%);opacity:0;transition:.3s}
+.card:hover::before{opacity:1}.card:hover{border-color:rgba(139,92,246,.5)}
+.card h3{font-size:18px;font-weight:500;margin-bottom:6px;position:relative}
+.card .n{font-family:'JetBrains Mono';font-size:12px;color:var(--b);margin-bottom:26px;display:block;position:relative}
+.chips{display:flex;flex-wrap:wrap;gap:8px;position:relative;margin-top:16px}
+.chips span{font-size:13px;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,.06);color:#d3d2e3}
+.proj{display:flex;flex-direction:column}
+.p{display:grid;grid-template-columns:70px 1fr 50px;gap:20px;align-items:center;padding:36px 0;border-top:1px solid var(--line);transition:.35s;position:relative}
+.p:last-child{border-bottom:1px solid var(--line)}
+.p:hover{padding-left:24px;background:linear-gradient(90deg,rgba(139,92,246,.12),transparent)}
+.p .no{font-family:'JetBrains Mono';color:var(--mute)}
+.p h3{font-size:clamp(24px,3.4vw,44px);font-weight:500;letter-spacing:-.03em}
+.p p{color:var(--mute);margin-top:10px;max-width:640px;line-height:1.5}
+.p .tg{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.p .tg span{font-family:'JetBrains Mono';font-size:12px;color:var(--b);border:1px solid rgba(34,211,238,.3);padding:4px 10px;border-radius:100px}
+.p .ar{font-size:30px;transition:.3s}.p:hover .ar{transform:rotate(-45deg);color:var(--b)}
+@media(max-width:600px){.p{grid-template-columns:1fr 36px}.p .no{display:none}}
+.tl{position:relative;padding-left:34px;border-left:1px solid var(--line)}
+.tl .it{position:relative;margin-bottom:56px}
+.tl .it::before{content:"";position:absolute;left:-40px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--a);box-shadow:0 0 0 6px rgba(139,92,246,.2),0 0 20px var(--a)}
+.tl .d{font-family:'JetBrains Mono';font-size:13px;color:var(--b)}
+.tl h3{font-size:clamp(22px,2.6vw,32px);font-weight:500;margin:8px 0 12px}
+.tl p{color:#b3b2c6;line-height:1.65;max-width:760px}
+.contact{text-align:center;padding-bottom:80px}
+.contact h2{font-size:clamp(44px,9vw,140px);letter-spacing:-.045em;line-height:.95;font-weight:700}
+.contact h2 em{font-family:'Instrument Serif';font-weight:400;background:linear-gradient(100deg,var(--c),var(--a),var(--b));-webkit-background-clip:text;color:transparent}
+.mail{display:inline-block;margin-top:40px;font-size:clamp(18px,3vw,34px);border-bottom:1px solid var(--mute);padding-bottom:4px;transition:.3s}
+.mail:hover{color:var(--b);border-color:var(--b)}
+.soc{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+footer{text-align:center;color:var(--mute);font-size:13px;font-family:'JetBrains Mono';padding:30px}
+.rv{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:22px 0;white-space:nowrap;font-family:'Instrument Serif';font-size:clamp(30px,5vw,60px);color:#3a3950}
+.marq div{display:inline-block;animation:mq 30s linear infinite}
+.marq b{color:var(--fg);font-weight:400;font-style:italic;margin:0 24px}
+@keyframes mq{to{transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div class="glow" id="glow"></div><div class="cur" id="cur"></div><div class="cur2" id="cur2"></div>
+<nav><a href="#top" class="logo">mohab<b>.</b>dev</a><ul><li><a href="#about">About</a></li><li><a href="#stack">Stack</a></li><li><a href="#work">Work</a></li><li><a href="#exp">Experience</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<section class="hero" id="top">
+  <div class="tag"><i></i>Open to .NET roles · Cairo, Egypt</div>
+  <h1><span class="l"><span>Mohab</span></span><span class="l"><span><em>Belkan</em></span></span></h1>
+  <p class="role">Software engineer who builds <b>clean, scalable, secure</b> backends. <span id="type"></span></p>
+  <div class="cta"><a class="btn p" href="#work">See my work ↓</a><a class="btn" href="mailto:mohabmbelkan@gmail.com">Say hello</a><a class="btn" href="https://github.com/mohab662" target="_blank" rel="noopener">GitHub ↗</a></div>
+  <div class="stats">
+    <div><b data-n="4">0</b><span>flagship projects</span></div>
+    <div><b data-n="6">0</b><span>months at Route</span></div>
+    <div><b data-n="25">0</b><span>technologies</span></div>
+    <div><b>C#</b><span>daily driver</span></div>
+  </div>
+</section>
+
+<div class="marq"><div id="mq"></div></div>
+
+<section id="about">
+  <div class="sh rv"><small>01</small><h2>About <em>me</em></h2></div>
+  <div class="about">
+    <p class="rv">I'm a dedicated and aspiring <b>.NET software engineer</b> with a solid foundation in <b>ASP.NET Core</b> and database design. I care about <b>software architecture</b>: layers that make sense, patterns that earn their place, and code the next developer can trust. Through hands-on projects and an intensive internship I've built scalable, secure solutions end to end.</p>
+    <div class="term rv"><div class="bar"><i></i><i></i><i></i></div><pre><span class="m">// Mohab.cs</span>
+<span class="k">public sealed class</span> <span class="t">Engineer</span>
+{
+  <span class="k">public string</span> Name  = <span class="s">"Mohab Belkan"</span>;
+  <span class="k">public string</span> Base  = <span class="s">"Cairo, Egypt"</span>;
+  <span class="k">public string</span>[] Loves = {
+    <span class="s">"Clean Architecture"</span>,
+    <span class="s">"SOLID"</span>, <span class="s">"Web APIs"</span>,
+    <span class="s">"Fast queries"</span>
+  };
+  <span class="k">public bool</span> ReadyToShip = <span class="k">true</span>;
+}</pre></div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="sh rv"><small>02</small><h2>The <em>stack</em></h2></div>
+  <div class="skills">
+    <div class="card rv"><span class="n">/01 BACKEND</span><h3>Server-side craft</h3><div class="chips"><span>C#</span><span>OOP</span><span>ASP.NET Core</span><span>.NET MVC</span><span>Web API</span><span>.NET Framework</span><span>SignalR</span><span>Clean Architecture</span><span>DAL · BLL · PL</span><span>Repository</span><span>Service Pattern</span></div></div>
+    <div class="card rv"><span class="n">/02 DATA</span><h3>Databases &amp; ORM</h3><div class="chips"><span>SQL Server</span><span>LINQ</span><span>Entity Framework</span><span>EF Core</span><span>ADO.NET</span><span>Dapper</span><span>Redis</span></div></div>
+    <div class="card rv"><span class="n">/03 CORE</span><h3>Computer science</h3><div class="chips"><span>Problem Solving</span><span>Data Structures</span><span>Algorithms</span><span>SOLID</span><span>Design Patterns</span><span>Agile</span></div></div>
+    <div class="card rv"><span class="n">/04 DEVOPS</span><h3>Ship it</h3><div class="chips"><span>Git</span><span>GitHub</span><span>GitHub Actions</span><span>Docker</span><span>CI/CD</span></div></div>
+    <div class="card rv"><span class="n">/05 FRONTEND</span><h3>Enough to be dangerous</h3><div class="chips"><span>HTML5</span><span>CSS3</span><span>Bootstrap</span><span>JavaScript</span><span>Angular basics</span></div></div>
+    <div class="card rv"><span class="n">/06 HUMAN</span><h3>Soft skills</h3><div class="chips"><span>Teamwork</span><span>Research</span><span>Time Management</span><span>Communication</span></div></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="sh rv"><small>03</small><h2>Selected <em>work</em></h2></div>
+  <div class="proj">
+    <a class="p rv" href="https://github.com/Mohab662/Talabat.Mohab.Solution.API" target="_blank" rel="noopener"><span class="no">01</span><div><h3>Talabat E-Commerce API</h3><p>A robust ASP.NET API for an e-commerce platform: product management, user authentication and secure order processing.</p><div class="tg"><span>ASP.NET Core</span><span>Web API</span><span>Auth</span></div></div><span class="ar">→</span></a>
+    <a class="p rv" href="https://github.com/Mohab662/SignLanguage.G27.Solution.API" target="_blank" rel="noopener"><span class="no">02</span><div><h3>Sign Language Translation</h3><p>Backend API for an AI-powered sign language translation system: image-to-text translation and user management.</p><div class="tg"><span>ASP.NET Core</span><span>AI integration</span><span>API</span></div></div><span class="ar">→</span></a>
+    <a class="p rv" href="https://github.com/Mohab662/LibraryBookManagementSystem.ITI.Solution.MVC" target="_blank" rel="noopener"><span class="no">03</span><div><h3>Library Management System</h3><p>Complete library system covering books, borrowers and lending operations. Full-stack ASP.NET MVC.</p><div class="tg"><span>ASP.NET MVC</span><span>Full-stack</span></div></div><span class="ar">→</span></a>
+    <a class="p rv" href="https://github.com/Mohab662/StudentManagementSystem.ITI.Solution.MVC" target="_blank" rel="noopener"><span class="no">04</span><div><h3>Student Management System</h3><p>Tracks student data, courses and grades. Strong MVC architecture and clean data handling.</p><div class="tg"><span>ASP.NET MVC</span><span>Data modeling</span></div></div><span class="ar">→</span></a>
+  </div>
+</section>
+
+<section id="exp">
+  <div class="sh rv"><small>04</small><h2>Path so <em>far</em></h2></div>
+  <div class="tl">
+    <div class="it rv"><span class="d">OCT 2023 → MAY 2024</span><h3>.NET Developer Intern · Route</h3><p>Six-month intensive .NET program. Built full-stack apps with ASP.NET Core MVC and Web API using Clean Architecture. Designed scalable APIs, tuned performance with LINQ, caching, middleware and Dependency Injection, and implemented secure database management and user authentication.</p></div>
+    <div class="it rv"><span class="d">SEP 2021 → JUN 2025</span><h3>B.Sc. Computer Science · El-Shorouk Academy</h3><p>Foundations in algorithms, data structures and software engineering, paired with real projects from day one.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="rv">Let's build<br>something <em>solid.</em></h2>
+  <a class="mail rv" href="mailto:mohabmbelkan@gmail.com">mohabmbelkan@gmail.com</a>
+  <div class="soc rv"><a class="btn" href="https://linkedin.com/in/mohab-belkan" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://github.com/mohab662" target="_blank" rel="noopener">GitHub ↗</a></div>
+</section>
+<footer>© 2026 Mohab Belkan · Cairo · Built by hand, no frameworks harmed</footer>
+
+<script>
+// background: connected particle network reacting to mouse
+const cv=document.getElementById('bg'),cx=cv.getContext('2d');let W,H,P=[],M={x:-999,y:-999};
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(90,W/16)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}))}
+rs();addEventListener('resize',rs);
+(function f(){cx.clearRect(0,0,W,H);for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;const dx=p.x-M.x,dy=p.y-M.y,d=Math.hypot(dx,dy);if(d<140){p.x+=dx/d*1.4;p.y+=dy/d*1.4}
+cx.fillStyle='rgba(160,140,255,.7)';cx.fillRect(p.x,p.y,2,2)}
+for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);if(d<130){cx.strokeStyle=`rgba(139,92,246,${.22*(1-d/130)})`;cx.beginPath();cx.moveTo(P[i].x,P[i].y);cx.lineTo(P[j].x,P[j].y);cx.stroke()}}
+requestAnimationFrame(f)})();
+// cursor
+const cur=document.getElementById('cur'),c2=document.getElementById('cur2'),gl=document.getElementById('glow');let tx=0,ty=0,x2=0,y2=0;
+addEventListener('mousemove',e=>{M.x=e.clientX;M.y=e.clientY;tx=e.clientX;ty=e.clientY;cur.style.left=tx+'px';cur.style.top=ty+'px';gl.style.left=tx+'px';gl.style.top=ty+'px'});
+(function l(){x2+=(tx-x2)*.15;y2+=(ty-y2)*.15;c2.style.left=x2+'px';c2.style.top=y2+'px';requestAnimationFrame(l)})();
+document.querySelectorAll('a,.card').forEach(e=>{e.addEventListener('mouseenter',()=>document.body.classList.add('hov'));e.addEventListener('mouseleave',()=>document.body.classList.remove('hov'))});
+// card spotlight + tilt
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');c.style.transform=`perspective(800px) rotateX(${(y/r.height-.5)*-6}deg) rotateY(${(x/r.width-.5)*6}deg)`}));
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('mouseleave',()=>c.style.transform=''));
+// typewriter
+const ph=['ASP.NET Core APIs.','Clean Architecture.','SQL Server that flies.','Code that ships.'];let pi=0,ci=0,del=false;const te=document.getElementById('type');
+(function ty(){const s=ph[pi];te.textContent=s.slice(0,ci);if(!del&&ci==s.length){del=true;return setTimeout(ty,1400)}if(del&&ci==0){del=false;pi=(pi+1)%ph.length}ci+=del?-1:1;setTimeout(ty,del?30:70)})();
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%3)*80+'ms';io.observe(e)});
+document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n;let v=0;const t=setInterval(()=>{v++;el.textContent=v+(n>=25?'+':'');if(v>=n)clearInterval(t)},1400/n+20)});
+// marquee
+const w=['C#','ASP.NET Core','EF Core','SQL Server','Docker','Clean Architecture','SignalR','Redis','CI/CD','Dapper'];document.getElementById('mq').innerHTML=(w.map(x=>`<b>${x}</b>·`).join('')).repeat(2);
+</script>
+</body>
+</html>
